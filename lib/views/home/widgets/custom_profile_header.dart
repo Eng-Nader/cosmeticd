@@ -1,0 +1,41 @@
+import '../../../core/ui/app_image.dart';
+import 'package:flutter/material.dart';
+
+class CustomProfileHeader extends StatelessWidget {
+  const CustomProfileHeader({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        Container(
+          height: 150,
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+
+              colors: [
+                Color(0x43434C6D),
+                Color(0xffECA4C5),
+              ],
+            ),
+          ),
+        ),
+        const Positioned(
+          right: 0,
+          left: 0,
+          bottom: -50,
+          child: CircleAvatar(
+            radius: 50,
+            child: AppImage(image: 'prof.png', color: null),
+          ),
+        ),
+      ],
+    );
+  }
+}

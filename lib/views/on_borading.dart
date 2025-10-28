@@ -1,29 +1,30 @@
-import 'dart:developer';
-import 'widgets/on_borading_item.dart';
+import 'package:cosmentics/core/logic/helper_methods.dart';
+import 'package:cosmentics/core/ui/app_image.dart';
+import 'package:cosmentics/views/auth/login.dart';
 import 'package:flutter/material.dart';
 
-class OnBorading extends StatefulWidget {
-  const OnBorading({super.key});
+class OnBoradingView extends StatefulWidget {
+  const OnBoradingView({super.key});
 
   @override
-  State<OnBorading> createState() => _OnBoradingState();
+  State<OnBoradingView> createState() => _OnBoradingViewState();
 }
 
-class _OnBoradingState extends State<OnBorading> {
-  final List onBoradingList = [
-    OnBordingModel(
+class _OnBoradingViewState extends State<OnBoradingView> {
+  final list = [
+    _Model(
       image: 'on_borading_one.png',
       title: 'WELCOME!',
       subTitle:
           'Makeup has the power to transform your \nmood and empowers you to be a more\n confident person.',
     ),
-    OnBordingModel(
+    _Model(
       image: 'on_borading_two.png',
       title: 'SEARCH & PICK',
       subTitle:
           'We have dedicated set of products and\n  routines hand picked for every skin type.',
     ),
-    OnBordingModel(
+    _Model(
       title: 'PUCH NOTIFICATIONS ',
       subTitle: 'Allow notifications for new makeup  &\n  cosmetics offers.',
       image: 'on_borading_three.png',
@@ -33,32 +34,108 @@ class _OnBoradingState extends State<OnBorading> {
 
   @override
   Widget build(BuildContext context) {
-    log(currentIndex.toString());
     return Scaffold(
       body: PageView.builder(
         onPageChanged: (value) {
-          setState(() {
-            currentIndex = value;
-          });
+          currentIndex = value;
+          setState(() {});
         },
 
-        itemCount: onBoradingList.length,
-        itemBuilder: (context, index) {
-          return OnBoradingItem(
-            currentIndex: currentIndex,
-            onBordingModel: onBoradingList[index],
-          );
-        },
+        itemCount: list.length,
+        itemBuilder: (context, index) => _OnBoradingItem(
+          currentIndex: currentIndex,
+          onBordingModel: list[index],
+        ),
       ),
     );
   }
 }
 
-class OnBordingModel {
+class _Model {
   final String image, title, subTitle;
-  OnBordingModel({
+  _Model({
     required this.image,
     required this.subTitle,
     required this.title,
   });
+}
+
+class _OnBoradingItem extends StatelessWidget {
+  const _OnBoradingItem({
+    required this.onBordingModel,
+    required this.currentIndex,
+  });
+  final _Model onBordingModel;
+  final int currentIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          AppImage(
+            image: onBordingModel.image,
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Text(
+            onBordingModel.title,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: currentIndex == 0 || currentIndex == 2
+                  ? const Color(0xff434C6D)
+                  : Colors.white,
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+            onBordingModel.subTitle,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: currentIndex == 0 || currentIndex == 2
+                  ? const Color(0xff434C6D)
+                  : Colors.white,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          if (currentIndex == 0 || currentIndex == 1)
+            FloatingActionButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+
+              backgroundColor: const Color(0xff434C6D),
+              onPressed: () {},
+              child: const Icon(
+                Icons.arrow_forward_ios,
+                color: Colors.white,
+              ),
+            )
+          else
+            FilledButton(
+              style: FilledButton.styleFrom(
+                backgroundColor: const Color(0xff434C6D),
+              ),
+              onPressed: () {
+                goTo(const LoginView(), canPop: false);
+              },
+              child: const Text(
+                'let’s start!',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
 }

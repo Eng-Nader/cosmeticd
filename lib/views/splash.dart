@@ -13,13 +13,11 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 2), () {
-      goTo(
-        const OnBorading(),
-        canPop: false,
-        delayedSeconds: 3,
-      );
-    });
+    goTo(
+      const OnBoradingView(),
+      canPop: false,
+      delayedSeconds: 3,
+    );
     super.initState();
   }
 
@@ -30,16 +28,10 @@ class _SplashViewState extends State<SplashView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AppImage(
-              image: 'splash_logo_two.png',
-            ),
+            AppImage(image: 'splash_logo_two.png'),
 
-            SizedBox(
-              height: 20,
-            ),
-            AppImage(
-              image: 'splash_logo_one.png',
-            ),
+            SizedBox(height: 20),
+            AppImage(image: 'splash_logo_one.png'),
           ],
         ),
       ),

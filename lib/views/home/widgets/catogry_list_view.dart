@@ -1,47 +1,47 @@
 import '../../../core/ui/app_image.dart';
 import 'package:flutter/material.dart';
 
-class CatogryListView extends StatelessWidget {
-  const CatogryListView({super.key});
-  final list = const [
-    CatogryModel(
+class CategoriesView extends StatelessWidget {
+  const CategoriesView({super.key});
+  final _list = const [
+    _CatogryModel(
       'https://d1flfk77wl2xk4.cloudfront.net/Assets/38/067/XXL_p0189906738.jpg',
       'Bundles',
     ),
-    CatogryModel(
+    _CatogryModel(
       'https://d1flfk77wl2xk4.cloudfront.net/Assets/38/067/XXL_p0189906738.jpg',
       'Perfumes',
     ),
-    CatogryModel(
+    _CatogryModel(
       'https://d1flfk77wl2xk4.cloudfront.net/Assets/38/067/XXL_p0189906738.jpg',
       'Makeup',
     ),
-    CatogryModel(
+    _CatogryModel(
       'https://i.pinimg.com/736x/83/fe/6e/83fe6e8e6c1e5e642f1e4fe88847bb6b.jpg',
       'Skin Care',
     ),
-    CatogryModel(
+    _CatogryModel(
       'https://img.joomcdn.net/687cd9796995bdd7fe40ed1b0e618c317c4ed3e0_original.jpeg',
       'Gifts',
     ),
 
-    CatogryModel(
+    _CatogryModel(
       'https://d1flfk77wl2xk4.cloudfront.net/Assets/38/067/XXL_p0189906738.jpg',
       'Bundles',
     ),
-    CatogryModel(
+    _CatogryModel(
       'https://d1flfk77wl2xk4.cloudfront.net/Assets/38/067/XXL_p0189906738.jpg',
       'Perfumes',
     ),
-    CatogryModel(
+    _CatogryModel(
       'https://d1flfk77wl2xk4.cloudfront.net/Assets/38/067/XXL_p0189906738.jpg',
       'Makeup',
     ),
-    CatogryModel(
+    _CatogryModel(
       'https://i.pinimg.com/736x/83/fe/6e/83fe6e8e6c1e5e642f1e4fe88847bb6b.jpg',
       'Skin Care',
     ),
-    CatogryModel(
+    _CatogryModel(
       'https://img.joomcdn.net/687cd9796995bdd7fe40ed1b0e618c317c4ed3e0_original.jpeg',
       'Gifts',
     ),
@@ -51,10 +51,10 @@ class CatogryListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       shrinkWrap: true,
-      itemCount: list.length,
+      itemCount: _list.length,
       itemBuilder: (context, index) {
-        return CatogryListViewItem(
-          catogrModel: list[index],
+        return _Item(
+          catogrModel: _list[index],
         );
       },
       separatorBuilder: (context, index) => const Divider(
@@ -65,9 +65,9 @@ class CatogryListView extends StatelessWidget {
   }
 }
 
-class CatogryListViewItem extends StatelessWidget {
-  const CatogryListViewItem({super.key, required this.catogrModel});
-  final CatogryModel catogrModel;
+class _Item extends StatelessWidget {
+  const _Item({required this.catogrModel});
+  final _CatogryModel catogrModel;
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -84,12 +84,14 @@ class CatogryListViewItem extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      trailing: const AppImage(image: 'arrow.svg'),
+      trailing: const AppImage(
+        image: 'arrow.svg',
+      ),
     );
   }
 }
 
-class CatogryModel {
+class _CatogryModel {
   final String image, title;
-  const CatogryModel(this.image, this.title);
+  const _CatogryModel(this.image, this.title);
 }

@@ -37,37 +37,37 @@ class _CreatePasswordViewState extends State<CreatePasswordView> {
                 ),
               ),
               const SizedBox(height: 40),
-              AppInput(
-                obscureText: isSecure ? false : true,
-                suffixIcon: GestureDetector(
-                  onTap: () {
-                    isSecure = !isSecure;
-                    setState(() {});
-                  },
-                  child: AppImage(
-                    image: isSecure ? 'visiblily.svg' : 'visibily_off.svg',
-                  ),
-                ),
+              // AppInput(
+              //   obscureText: isSecure ? false : true,
+              //   suffixIcon: GestureDetector(
+              //     onTap: () {
+              //       isSecure = !isSecure;
+              //       setState(() {});
+              //     },
+              //     child: AppImage(
+              //       image: isSecure ? 'visiblily.svg' : 'visibily_off.svg',
+              //     ),
+              //   ),
 
-                hintText: 'Your Password',
-                labelText: 'Your Password',
-              ),
+              //   hintText: 'Your Password',
+              //   labelText: 'Your Password',
+              // ),
               const SizedBox(height: 10),
-              AppInput(
-                obscureText: isSecure ? false : true,
-                suffixIcon: GestureDetector(
-                  onTap: () {
-                    isSecure = !isSecure;
-                    setState(() {});
-                  },
-                  child: AppImage(
-                    image: isSecure ? 'visiblily.svg' : 'visibily_off.svg',
-                  ),
-                ),
+              // AppInput(
+              //   obscureText: isSecure ? false : true,
+              //   suffixIcon: GestureDetector(
+              //     onTap: () {
+              //       isSecure = !isSecure;
+              //       setState(() {});
+              //     },
+              //     child: AppImage(
+              //       image: isSecure ? 'visiblily.svg' : 'visibily_off.svg',
+              //     ),
+              //   ),
 
-                hintText: 'Your Password',
-                labelText: 'Your Password',
-              ),
+              //   hintText: 'Your Password',
+              //   labelText: 'Your Password',
+              // ),
               const SizedBox(height: 100),
               AppButton(
                 title: 'Confirm',

@@ -52,10 +52,10 @@ class _LoginViewState extends State<LoginView> {
                 const SizedBox(height: 25),
                 const CustomPhoneAuthFild(),
                 const SizedBox(height: 10),
-                const AppInput(
-                  hintText: ' Your Password',
-                  labelText: ' Your Password',
-                ),
+                // const AppInput(
+                //   hintText: ' Your Password',
+                //   labelText: ' Your Password',
+                // ),
 
                 const SizedBox(height: 15),
                 Align(

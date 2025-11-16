@@ -1,4 +1,5 @@
 import 'package:cosmentics/core/ui/app_input.dart';
+import 'package:cosmentics/core/ui/app_search.dart';
 
 import '../../../core/ui/app_image.dart';
 import '../widgets/home_grid.dart';
@@ -19,15 +20,12 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const AppInput(
-              hintText: 'search',
-              labelText: 'search',
-            ),
+            const AppSearch(),
+
             const SizedBox(height: 12),
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Stack(
-              
                 alignment: Alignment.center,
                 children: [
                   const AppImage(

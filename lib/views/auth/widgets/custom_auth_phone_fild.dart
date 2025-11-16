@@ -37,13 +37,13 @@ class CustomPhoneAuthFild extends StatelessWidget {
         const SizedBox(
           width: 5,
         ),
-        const Expanded(
-          flex: 3,
-          child: AppInput(
-            hintText: 'Phone Number',
-            labelText: 'Phone Number',
-          ),
-        ),
+        // const Expanded(
+        //   flex: 3,
+        //   // child: AppInput(
+        //   //   hintText: 'Phone Number',
+        //   //   labelText: 'Phone Number',
+        //   // ),
+        // ),
       ],
     );
   }

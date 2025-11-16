@@ -1,4 +1,4 @@
-import 'package:cosmentics/core/ui/app_input.dart';
+import 'package:cosmentics/core/ui/app_search.dart';
 import '../widgets/catogry_list_view.dart';
 import 'package:flutter/material.dart';
 
@@ -22,15 +22,12 @@ class CatogryPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20),
-                AppInput(
-                  hintText: '',
-                  labelText: '',
-                ),
+                AppSearch(),
                 SizedBox(
                   height: 20,
                 ),
                 Expanded(
-                  child: CatogryListView(),
+                  child: CategoriesView(),
                 ),
               ],
             ),

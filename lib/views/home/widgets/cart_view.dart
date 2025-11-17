@@ -116,32 +116,38 @@ class _Item extends StatelessWidget {
         const SizedBox(
           width: 8,
         ),
-        Column(
-          children: [
-            Text.rich(
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-              ),
-              TextSpan(
-                text: "${model.title}\n",
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text.rich(
+                style: const TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                ),
+                TextSpan(
+                  text: "${model.title}\n",
 
-                children: [
-                  TextSpan(
-                    text: "${model.subTitle}\n",
-                    style: const TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.normal,
+                  children: [
+                    TextSpan(
+                      text: "${model.subTitle}\n",
+                      style: const TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
-                  ),
-                  TextSpan(
-                    text: model.price,
-                  ),
-                ],
+                    TextSpan(
+                      text: model.price,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const Expanded(child: CartButton()),
-          ],
+              const Align(
+                alignment: AlignmentDirectional.centerEnd,
+                child: CartButton(),
+              ),
+            ],
+          ),
         ),
       ],
     );

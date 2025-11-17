@@ -49,7 +49,7 @@ class CartPage extends StatelessWidget {
                 height: 34,
               ),
 
-              const CartView(),
+              CartView(),
             ],
           ),
         ),

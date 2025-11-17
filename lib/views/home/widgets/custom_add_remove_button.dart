@@ -22,6 +22,7 @@ class _CartButtonState extends State<CartButton> {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisSize: MainAxisSize.min,
 
         children: [
           IconButton(
@@ -33,15 +34,17 @@ class _CartButtonState extends State<CartButton> {
           ),
           Text(
             '$number',
-          ),
-          Flexible(
-            child: IconButton(
-              onPressed: () {
-                number++;
-                setState(() {});
-              },
-              icon: const Icon(Icons.add),
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
             ),
+          ),
+          IconButton(
+            onPressed: () {
+              number++;
+              setState(() {});
+            },
+            icon: const Icon(Icons.add),
           ),
         ],
       ),

@@ -1,67 +1,49 @@
 import 'package:flutter/material.dart';
 
-class CustomAddRemoveButton extends StatefulWidget {
-  const CustomAddRemoveButton({
+class CartButton extends StatefulWidget {
+  const CartButton({
     super.key,
   });
 
   @override
-  State<CustomAddRemoveButton> createState() => _CustomAddRemoveButtonState();
+  State<CartButton> createState() => _CartButtonState();
 }
 
-class _CustomAddRemoveButtonState extends State<CustomAddRemoveButton> {
+class _CartButtonState extends State<CartButton> {
   int number = 0;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 130),
-      child: Container(
-        height: 40,
-        width: 112,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: BoxBorder.all(
-            color: const Color(0xff8E8EA9),
-          ),
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        border: BoxBorder.all(
+          color: const Color(0xff8E8EA9),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
-          children: [
-            IconButton(
+        children: [
+          IconButton(
+            onPressed: () {
+              number--;
+              setState(() {});
+            },
+            icon: const Icon(Icons.remove),
+          ),
+          Text(
+            '$number',
+          ),
+          Flexible(
+            child: IconButton(
               onPressed: () {
-                number--;
+                number++;
                 setState(() {});
               },
-              icon: const Icon(Icons.remove),
+              icon: const Icon(Icons.add),
             ),
-            AnimatedSwitcher(
-              duration: const Duration(milliseconds: 350),
-              transitionBuilder: (child, animation) {
-                return ScaleTransition(
-                  scale: animation,
-                  child: FadeTransition(
-                    opacity: animation,
-                    child: child,
-                  ),
-                );
-              },
-              child: Text(
-                key: ValueKey(number),
-                '$number',
-              ),
-            ),
-            Flexible(
-              child: IconButton(
-                onPressed: () {
-                  number++;
-                  setState(() {});
-                },
-                icon: const Icon(Icons.add),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

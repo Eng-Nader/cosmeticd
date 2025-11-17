@@ -1,6 +1,6 @@
 import '../../core/ui/app_image.dart';
 import 'pages/cart.dart';
-import 'pages/catogry.dart';
+import 'pages/categories.dart';
 import 'pages/profile.dart';
 import 'pages/home.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +17,7 @@ class _HomeViewState extends State<HomeView> {
 
   final _homeList = [
     const _HomeModel('home.svg', HomePage()),
-    const _HomeModel('categories.svg', CatogryPage()),
+    const _HomeModel('categories.svg', CategoriesPage()),
     const _HomeModel('cart.svg', CartPage()),
     const _HomeModel('profile.svg', ProfilePage()),
   ];

@@ -1,7 +1,7 @@
 import '../../../core/logic/helper_methods.dart';
 import '../../../core/ui/app_image.dart';
 import 'checkout.dart';
-import '../widgets/card_list_view.dart';
+import '../widgets/cart_view.dart';
 import 'package:flutter/material.dart';
 
 class CartPage extends StatelessWidget {
@@ -49,16 +49,11 @@ class CartPage extends StatelessWidget {
                 height: 34,
               ),
 
-              const CardListView(),
+              const CartView(),
             ],
           ),
         ),
       ),
     );
   }
-}
-
-class CardModel {
-  final String title, subTitle, price, image;
-  const CardModel(this.image, this.price, this.subTitle, this.title);
 }

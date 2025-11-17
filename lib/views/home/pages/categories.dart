@@ -1,9 +1,9 @@
 import 'package:cosmentics/core/ui/app_search.dart';
-import '../widgets/catogry_list_view.dart';
+import '../widgets/categories_view.dart';
 import 'package:flutter/material.dart';
 
-class CatogryPage extends StatelessWidget {
-  const CatogryPage({super.key});
+class CategoriesPage extends StatelessWidget {
+  const CategoriesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +26,7 @@ class CatogryPage extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                Expanded(
-                  child: CategoriesView(),
-                ),
+                CategoriesView(),
               ],
             ),
           ),

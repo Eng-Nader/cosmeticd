@@ -6,10 +6,12 @@ class AppInput extends StatelessWidget {
   final String? suffixIcon;
   final String? hintText;
 
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
+        isDense: true,
         hintText: hintText,
         suffixIcon: suffixIcon != null
             ? AppImage(

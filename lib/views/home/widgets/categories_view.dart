@@ -4,44 +4,44 @@ import 'package:flutter/material.dart';
 class CategoriesView extends StatelessWidget {
   const CategoriesView({super.key});
   final _list = const [
-    _CatogryModel(
+    _Model(
       'https://d1flfk77wl2xk4.cloudfront.net/Assets/38/067/XXL_p0189906738.jpg',
       'Bundles',
     ),
-    _CatogryModel(
+    _Model(
       'https://d1flfk77wl2xk4.cloudfront.net/Assets/38/067/XXL_p0189906738.jpg',
       'Perfumes',
     ),
-    _CatogryModel(
+    _Model(
       'https://d1flfk77wl2xk4.cloudfront.net/Assets/38/067/XXL_p0189906738.jpg',
       'Makeup',
     ),
-    _CatogryModel(
+    _Model(
       'https://i.pinimg.com/736x/83/fe/6e/83fe6e8e6c1e5e642f1e4fe88847bb6b.jpg',
       'Skin Care',
     ),
-    _CatogryModel(
+    _Model(
       'https://img.joomcdn.net/687cd9796995bdd7fe40ed1b0e618c317c4ed3e0_original.jpeg',
       'Gifts',
     ),
 
-    _CatogryModel(
+    _Model(
       'https://d1flfk77wl2xk4.cloudfront.net/Assets/38/067/XXL_p0189906738.jpg',
       'Bundles',
     ),
-    _CatogryModel(
+    _Model(
       'https://d1flfk77wl2xk4.cloudfront.net/Assets/38/067/XXL_p0189906738.jpg',
       'Perfumes',
     ),
-    _CatogryModel(
+    _Model(
       'https://d1flfk77wl2xk4.cloudfront.net/Assets/38/067/XXL_p0189906738.jpg',
       'Makeup',
     ),
-    _CatogryModel(
+    _Model(
       'https://i.pinimg.com/736x/83/fe/6e/83fe6e8e6c1e5e642f1e4fe88847bb6b.jpg',
       'Skin Care',
     ),
-    _CatogryModel(
+    _Model(
       'https://img.joomcdn.net/687cd9796995bdd7fe40ed1b0e618c317c4ed3e0_original.jpeg',
       'Gifts',
     ),
@@ -52,11 +52,10 @@ class CategoriesView extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       itemCount: _list.length,
-      itemBuilder: (context, index) {
-        return _Item(
-          catogrModel: _list[index],
-        );
-      },
+      itemBuilder: (context, index) => _Item(
+        model: _list[index],
+      ),
+
       separatorBuilder: (context, index) => const Divider(
         color: Color(0xffb3b3c1),
         thickness: 1,
@@ -66,19 +65,21 @@ class CategoriesView extends StatelessWidget {
 }
 
 class _Item extends StatelessWidget {
-  const _Item({required this.catogrModel});
-  final _CatogryModel catogrModel;
+  const _Item({required this.model});
+  final _Model model;
   @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: AppImage(
-          image: catogrModel.image,
+          image: model.image,
+          height: 64,
+          width: 64,
         ),
       ),
       title: Text(
-        catogrModel.title,
+        model.title,
         style: const TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.bold,
@@ -91,7 +92,7 @@ class _Item extends StatelessWidget {
   }
 }
 
-class _CatogryModel {
+class _Model {
   final String image, title;
-  const _CatogryModel(this.image, this.title);
+  const _Model(this.image, this.title);
 }

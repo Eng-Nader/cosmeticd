@@ -15,6 +15,7 @@ class CheckoutPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(
                 height: 24,
@@ -37,9 +38,7 @@ class CheckoutPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    const SizedBox(height: 20),
                     const Text(
                       'Delivery to',
                       style: TextStyle(
@@ -47,34 +46,24 @@ class CheckoutPage extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(
-                      height: 18,
-                    ),
-                    const CheckOutGoogle(),
-                    const SizedBox(
-                      height: 40,
-                    ),
+                    const SizedBox(height: 18),
+                    const CheckoutMap(),
+                    const SizedBox(height: 40),
                     const Text(
                       'Payment Method',
                       style: TextStyle(
                         fontSize: 14,
                       ),
                     ),
-                    const SizedBox(
-                      height: 18,
-                    ),
-                    const CheckOutPaymentBody(
-                      imageName: 'paymnet.svg',
-                      title: '**** **** **** 0256 ',
-                      isIcon: true,
+                    const SizedBox(height: 18),
+                    const CheckOutPayment(
+                     isCheckd: true,
                     ),
                     const SizedBox(
                       height: 12,
                     ),
-                    const CheckOutPaymentBody(
-                      imageName: 'discount.svg',
-                      title: 'Add vaucher',
-                      isIcon: false,
+                    const CheckOutPayment(
+                     
                     ),
                     const SizedBox(
                       height: 31,
@@ -111,11 +100,9 @@ class CheckoutPage extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    Center(
-                      child: AppButton(
-                        title: 'ORDER',
-                        onPressed: () {},
-                      ),
+                    AppButton(
+                      title: 'ORDER',
+                      onPressed: () {},
                     ),
                   ],
                 ),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class CheckOutHeader extends StatelessWidget {
@@ -23,6 +22,7 @@ class CheckOutHeader extends StatelessWidget {
             ),
           ),
           const Spacer(),
+
           const Text(
             'Checkout',
             style: TextStyle(

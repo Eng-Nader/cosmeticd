@@ -2,16 +2,16 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class CheckOutGoogle extends StatefulWidget {
-  const CheckOutGoogle({
+class CheckoutMap extends StatefulWidget {
+  const CheckoutMap({
     super.key,
   });
 
   @override
-  State<CheckOutGoogle> createState() => _CheckOutGoogleState();
+  State<CheckoutMap> createState() => _CheckoutMapState();
 }
 
-class _CheckOutGoogleState extends State<CheckOutGoogle> {
+class _CheckoutMapState extends State<CheckoutMap> {
   static const CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(31.035736, 31.352704),
     zoom: 14.4746,
@@ -30,7 +30,6 @@ class _CheckOutGoogleState extends State<CheckOutGoogle> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       height: 84,
-      width: 300,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         color: Colors.transparent,

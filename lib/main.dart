@@ -1,4 +1,4 @@
-import 'package:cosmentics/views/auth/create_password.dart';
+import 'package:cosmentics/views/home/view.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/logic/helper_methods.dart';
@@ -69,7 +69,7 @@ class Cosmetics extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        home: const CreatePasswordView(),
+        home: const HomeView(),
       ),
     );
   }

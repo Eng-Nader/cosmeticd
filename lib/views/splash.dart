@@ -28,10 +28,14 @@ class _SplashViewState extends State<SplashView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AppImage(image: 'splash_logo_two.png'),
+            AppImage(
+              image: 'splash_logo_two.png',
+            ),
 
             SizedBox(height: 20),
-            AppImage(image: 'splash_logo_one.png'),
+            AppImage(
+              image: 'splash_logo_one.png',
+            ),
           ],
         ),
       ),

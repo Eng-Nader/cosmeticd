@@ -1,23 +1,18 @@
 import '../../../core/ui/app_image.dart';
 import 'package:flutter/material.dart';
 
-class CheckOutPaymentBody extends StatelessWidget {
-  const CheckOutPaymentBody({
+class CheckOutPayment extends StatelessWidget {
+  const CheckOutPayment({
     super.key,
-    required this.title,
-    required this.imageName,
-    required this.isIcon,
+    this.isCheckd = false,
   });
-  final String title;
-  final String imageName;
-  final bool isIcon;
-
+  final bool isCheckd;
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       height: 57,
-      width: 300,
+
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         border: Border.all(
@@ -28,17 +23,17 @@ class CheckOutPaymentBody extends StatelessWidget {
       child: Row(
         children: [
           AppImage(
-            image: imageName,
+            image: isCheckd ? 'paymnet.svg' : 'discount.svg',
             color: null,
           ),
           const SizedBox(
             width: 10,
           ),
           Text(
-            title,
+            isCheckd ? '**** **** **** 0256 ' : 'Add vaucher',
           ),
           const Spacer(),
-          if (isIcon)
+          if (isCheckd)
             Transform.rotate(
               angle: -1.5708,
 

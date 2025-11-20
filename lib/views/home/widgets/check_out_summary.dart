@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 
-class CheckOutPaymentSummary extends StatelessWidget {
-  const CheckOutPaymentSummary({
+class CheckOutSummary extends StatelessWidget {
+  const CheckOutSummary({
     super.key,
   });
 

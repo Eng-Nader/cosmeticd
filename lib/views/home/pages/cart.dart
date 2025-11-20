@@ -27,10 +27,9 @@ class CartPage extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
-                  GestureDetector(
-                    onTap: () => goTo(const CheckoutPage()),
-
-                    child: const AppImage(image: 'card.svg'),
+                  IconButton(
+                    onPressed: () => goTo(const CheckoutPage()),
+                    icon: const AppImage(image: 'card.svg'),
                   ),
                 ],
               ),

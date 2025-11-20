@@ -1,9 +1,9 @@
 import '../widgets/check_out_header.dart';
-import '../widgets/check_out_paymnet_summary.dart';
+import '../widgets/check_out_summary.dart';
 
 import '../../../core/ui/app_button.dart';
-import '../widgets/checkout_payment_body.dart';
-import '../widgets/check_out_google.dart';
+import '../widgets/checkout_payment.dart';
+import '../widgets/check_out_map.dart';
 import 'package:flutter/material.dart';
 
 class CheckoutPage extends StatelessWidget {
@@ -15,7 +15,6 @@ class CheckoutPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(
                 height: 24,
@@ -36,7 +35,7 @@ class CheckoutPage extends StatelessWidget {
                   color: const Color(0x4329d3da).withValues(alpha: .1),
                 ),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const SizedBox(height: 20),
                     const Text(
@@ -57,28 +56,18 @@ class CheckoutPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 18),
                     const CheckOutPayment(
-                     isCheckd: true,
+                      isCheckd: true,
                     ),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    const CheckOutPayment(
-                     
-                    ),
-                    const SizedBox(
-                      height: 31,
-                    ),
+                    const SizedBox(height: 12),
+                    const CheckOutPayment(),
+                    const SizedBox(height: 31),
                     Text(
                       '_ \t' * 100,
                       maxLines: 1,
                     ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    const CheckOutPaymentSummary(),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    const SizedBox(height: 30),
+                    const CheckOutSummary(),
+                    const SizedBox(height: 20),
                     const Divider(
                       thickness: 1,
                       color: Color(0xff73B9BB),
@@ -97,13 +86,8 @@ class CheckoutPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    AppButton(
-                      title: 'ORDER',
-                      onPressed: () {},
-                    ),
+                    const SizedBox(height: 10),
+                    AppButton(title: 'ORDER', onPressed: () {}),
                   ],
                 ),
               ),

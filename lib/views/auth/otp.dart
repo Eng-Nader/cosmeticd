@@ -106,7 +106,7 @@ class OtpView extends StatelessWidget {
               const SizedBox(height: 60),
               AppButton(
                 title: 'Done',
-                onPressed: () {},
+                onPressed: () => goTo(const CreatePasswordView()),
               ),
             ],
           ),
@@ -115,5 +115,3 @@ class OtpView extends StatelessWidget {
     );
   }
 }
-
-

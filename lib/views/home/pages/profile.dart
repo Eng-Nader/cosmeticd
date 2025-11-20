@@ -1,4 +1,4 @@
-import '../widgets/profile_list_view.dart';
+import '../widgets/profile_view.dart';
 import '../widgets/profile_header.dart';
 import 'package:flutter/material.dart';
 

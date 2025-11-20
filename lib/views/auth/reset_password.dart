@@ -1,6 +1,5 @@
 import '../../core/logic/helper_methods.dart';
 import 'otp.dart';
-import 'widgets/custom_auth_logo.dart';
 import '../../core/ui/app_button.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +14,6 @@ class ResetPasswordView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
-              const CustomAuthLogo(title: 'Reset password'),
               const SizedBox(height: 30),
               Text(
                 textAlign: TextAlign.center,
@@ -31,7 +29,7 @@ class ResetPasswordView extends StatelessWidget {
               const SizedBox(height: 30),
               AppButton(
                 title: 'next',
-                onPressed: () => goTo(const OneTimePasswordView()),
+                onPressed: () => goTo(const OtpView()),
               ),
             ],
           ),

@@ -74,15 +74,11 @@ class SignUpView extends StatelessWidget {
                   const LoginView(),
                 ),
               ),
-              AppLoginOrSignup(
-                title: 'Have an account?',
-                subTitle: 'Login',
-                onTap: () => goTo(const LoginView()),
-              ),
             ],
           ),
         ),
       ),
+      bottomNavigationBar: const AppLoginOrSignup(),
     );
   }
 }

@@ -1,14 +1,15 @@
+import 'package:cosmentics/core/logic/helper_methods.dart';
+import 'package:cosmentics/views/auth/login.dart';
+import 'package:cosmentics/views/auth/sign_up.dart';
 import 'package:flutter/material.dart';
 
 class AppLoginOrSignup extends StatelessWidget {
   const AppLoginOrSignup({
     super.key,
-    required this.title,
-    required this.subTitle,
-    required this.onTap,
+
+    this.isLogin = false,
   });
-  final String title, subTitle;
-  final VoidCallback onTap;
+  final bool isLogin;
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +20,7 @@ class AppLoginOrSignup extends StatelessWidget {
         TextSpan(
           children: [
             TextSpan(
-          
-              text: title,
+              text: isLogin ? 'Don’t have an account?' : 'Have an account?',
             ),
             WidgetSpan(
               alignment: PlaceholderAlignment
@@ -31,8 +31,9 @@ class AppLoginOrSignup extends StatelessWidget {
                   visualDensity: VisualDensity
                       .compact, //   if you want to textbutton small
                 ),
-                onPressed: onTap,
-                child: Text(subTitle),
+                onPressed: () =>
+                    goTo(isLogin ? const SignUpView() : const LoginView()),
+                child: Text(isLogin ? 'register' : 'login'),
               ),
             ),
           ],

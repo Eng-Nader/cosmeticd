@@ -1,19 +1,14 @@
-import '../../core/ui/app_image.dart';
-import 'widgets/custom_auth_logo.dart';
-import '../../core/ui/app_input.dart';
+import 'package:cosmentics/core/logic/helper_methods.dart';
+import 'package:cosmentics/core/ui/app_image.dart';
+import 'package:cosmentics/core/ui/app_input.dart';
+import 'package:cosmentics/core/ui/app_login_or_signup.dart';
+import 'package:cosmentics/views/auth/login.dart';
 import '../../core/ui/app_button.dart';
 import 'package:flutter/material.dart';
 
-class SignUpView extends StatefulWidget {
+class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
 
-  @override
-  State<SignUpView> createState() => _SignUpViewState();
-}
-
-class _SignUpViewState extends State<SignUpView> {
-  bool isSecure = false;
-  bool isConformSecure = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,52 +16,68 @@ class _SignUpViewState extends State<SignUpView> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const CustomAuthLogo(
-                title: 'Create account',
+              const AppImage(
+                height: 100,
+                image: 'splash_logo_two.png',
               ),
-              const SizedBox(height: 50),
-              // const AppInput(
-              //   hintText: 'Your Name ',
-              //   labelText: 'Your Name',
-              // ),
-              const SizedBox(height: 33),
-              const SizedBox(height: 16),
-              // AppInput(
-              //   obscureText: isSecure ? false : true,
-              //   suffixIcon: GestureDetector(
-              //     onTap: () {
-              //       isSecure = !isSecure;
-              //       setState(() {});
-              //     },
-              //     child: AppImage(
-              //       image: isSecure ? 'visiblily.svg' : 'visibily_off.svg',
-              //     ),
-              //   ),
-              //   hintText: 'Your Password',
-              //   labelText: 'Your Password',
-              // ),
-              const SizedBox(height: 16),
-              // AppInput(
-              //   obscureText: isConformSecure ? false : true,
-              //   suffixIcon: GestureDetector(
-              //     onTap: () {
-              //       isConformSecure = !isConformSecure;
-              //       setState(() {});
-              //     },
-              //     child: AppImage(
-              //       image: isConformSecure
-              //           ? 'visiblily.svg'
-              //           : 'visibily_off.svg',
-              //     ),
-              //   ),
-              //   hintText: 'Your Password',
-              //   labelText: 'Your Password',
-              // ),
-              const SizedBox(height: 50),
+              const SizedBox(
+                height: 30,
+              ),
+              const Text(
+                textAlign: TextAlign.center,
+                'Create account',
+                style: TextStyle(
+                  fontSize: 24,
+
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(
+                height: 71,
+              ),
+              const AppInput(
+                hintText: 'your Name',
+                label: ' your Name',
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const AppInput(
+                withCountryCode: true,
+                hintText: 'phone Number',
+                label: 'phone Number',
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const AppInput(
+                hintText: 'your password',
+                label: 'your password',
+                isSuffix: true,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const AppInput(
+                hintText: 'Confirm password',
+                label: 'Confirm password',
+                isSuffix: true,
+              ),
+              const SizedBox(
+                height: 80,
+              ),
               AppButton(
-                title: 'Next',
-                onPressed: () {},
+                title: 'Create Account',
+                onPressed: () => goTo(
+                  const LoginView(),
+                ),
+              ),
+              AppLoginOrSignup(
+                title: 'Have an account?',
+                subTitle: 'Login',
+                onTap: () => goTo(const LoginView()),
               ),
             ],
           ),

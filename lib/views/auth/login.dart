@@ -1,7 +1,6 @@
 import 'package:cosmentics/core/ui/app_input.dart';
 import 'package:cosmentics/core/ui/app_login_or_signup.dart';
 import 'package:cosmentics/views/auth/sign_up.dart';
-import 'package:flutter/gestures.dart';
 
 import '../../core/logic/helper_methods.dart';
 import '../../core/ui/app_image.dart';
@@ -88,7 +87,9 @@ class _LoginViewState extends State<LoginView> {
                 AppLoginOrSignup(
                   title: 'Dont have account? ',
                   subTitle: 'Register',
-                  onTap: () => goTo(const SignUpView()),
+                  onTap: () => goTo(
+                    const SignUpView(),
+                  ),
                 ),
               ],
             ),

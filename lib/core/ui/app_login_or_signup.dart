@@ -1,6 +1,3 @@
-import 'package:cosmentics/core/logic/helper_methods.dart';
-import 'package:cosmentics/views/auth/sign_up.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class AppLoginOrSignup extends StatelessWidget {
@@ -22,13 +19,20 @@ class AppLoginOrSignup extends StatelessWidget {
         TextSpan(
           children: [
             TextSpan(
+          
               text: title,
             ),
-            TextSpan(
-              recognizer: TapGestureRecognizer()..onTap = onTap,
-              text: subTitle,
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
+            WidgetSpan(
+              alignment: PlaceholderAlignment
+                  .middle, // if you want a text button in middle
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  padding: EdgeInsets.zero,
+                  visualDensity: VisualDensity
+                      .compact, //   if you want to textbutton small
+                ),
+                onPressed: onTap,
+                child: Text(subTitle),
               ),
             ),
           ],

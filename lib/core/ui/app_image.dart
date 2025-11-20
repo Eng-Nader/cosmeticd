@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:lottie/lottie.dart';
 
 class AppImage extends StatelessWidget {
   const AppImage({
@@ -32,6 +33,13 @@ class AppImage extends StatelessWidget {
         color: color,
         height: height,
         width: width,
+      );
+    } else if (image.endsWith('json')) {
+      return Lottie.asset(
+        'assets/lotties/$image',
+        height: height,
+        width: width,
+        fit: fit,
       );
     }
     return Image.asset(

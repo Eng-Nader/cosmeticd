@@ -1,29 +1,37 @@
+import 'package:cosmentics/core/ui/app_button.dart';
+import 'package:cosmentics/core/ui/app_image.dart';
+import 'package:cosmentics/core/ui/app_input.dart';
+import 'package:cosmentics/views/auth/widgets/sucees_dialog.dart';
 import 'package:flutter/material.dart';
 
-import '../../core/logic/helper_methods.dart';
-import '../../core/ui/app_button.dart';
-import 'login.dart';
-import 'otp.dart';
-
-class CreatePasswordView extends StatefulWidget {
+class CreatePasswordView extends StatelessWidget {
   const CreatePasswordView({super.key});
 
   @override
-  State<CreatePasswordView> createState() => _CreatePasswordViewState();
-}
-
-class _CreatePasswordViewState extends State<CreatePasswordView> {
-  bool isSecure = false;
-  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(height: 40),
-              Text(
+              const AppImage(
+                image: 'splash_logo_two.png',
+                height: 50,
+              ),
+              const SizedBox(height: 40),
+              const Text(
+                textAlign: TextAlign.center,
+                'create password',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: 40),
+              const Text(
                 textAlign: TextAlign.center,
                 'The password should have at least \n 6 characters.',
                 style: TextStyle(
@@ -31,9 +39,30 @@ class _CreatePasswordViewState extends State<CreatePasswordView> {
                   color: Color(0xff8E8EA9),
                 ),
               ),
-              SizedBox(height: 40),
-
-              SizedBox(height: 100),
+              const SizedBox(height: 40),
+              const AppInput(
+                isSuffix: true,
+                hintText: 'new password',
+                label: 'new password',
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const AppInput(
+                isSuffix: true,
+                hintText: 'confirm password',
+                label: 'confirm password',
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              AppButton(
+                title: 'Confirm',
+                onPressed: () => showDialog(
+                  context: context,
+                  builder: (context) => const SucessDialog(),
+                ),
+              ),
             ],
           ),
         ),

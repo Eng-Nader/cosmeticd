@@ -1,0 +1,53 @@
+import 'package:cosmentics/core/logic/helper_methods.dart';
+import 'package:cosmentics/views/auth/login.dart';
+
+import '../../../core/ui/app_button.dart';
+import '../../../core/ui/app_image.dart';
+import 'package:flutter/material.dart';
+
+class SucessDialog extends StatelessWidget {
+  const SucessDialog({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SimpleDialog(
+      contentPadding: const EdgeInsets.all(16),
+      backgroundColor: const Color(0xffD9D9D9),
+      children: [
+        const AppImage(
+          image: 'success.json',
+          height: 70,
+          width: 70,
+        ),
+        const SizedBox(height: 20),
+        const Text(
+          textAlign: TextAlign.center,
+          'Password Created!',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          ),
+        ),
+        const SizedBox(height: 10),
+        Text(
+          textAlign: TextAlign.center,
+          'Congratulations! Your password\n  has been successfully created',
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 16,
+            color: const Color(0xff434C6D).withValues(alpha: .8),
+          ),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        AppButton(
+          title: 'Go to Home',
+          onPressed: () => goTo(const LoginView()),
+        ),
+      ],
+    );
+  }
+}

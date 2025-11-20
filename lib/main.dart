@@ -1,5 +1,5 @@
-import 'package:cosmentics/views/auth/login.dart';
-import 'package:cosmentics/views/home/view.dart';
+import 'package:cosmentics/views/auth/create_password.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/logic/helper_methods.dart';
 import 'package:flutter/material.dart';
@@ -43,6 +43,14 @@ class Cosmetics extends StatelessWidget {
             labelStyle: const TextStyle(
               color: Color(0xff8E8EA9),
             ),
+            hintStyle: const TextStyle(
+              color: Color(0xff8E8EA9),
+              fontSize: 12,
+            ),
+            floatingLabelStyle: const TextStyle(
+              fontSize: 14,
+            ),
+
             border: buildBorder(),
             enabledBorder: buildBorder(),
             focusedBorder: buildBorder(),
@@ -52,7 +60,7 @@ class Cosmetics extends StatelessWidget {
           filledButtonTheme: FilledButtonThemeData(
             style: FilledButton.styleFrom(
               backgroundColor: const Color(0xffD75D72),
-              fixedSize: const Size.fromHeight(65), 
+              fixedSize: const Size.fromHeight(65),
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(60),
@@ -61,7 +69,7 @@ class Cosmetics extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        home: const LoginView(),
+        home: const CreatePasswordView(),
       ),
     );
   }

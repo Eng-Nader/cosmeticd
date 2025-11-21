@@ -1,16 +1,20 @@
-# cosmentics
+🧴 Cosmetics App
+✨ وصف التطبيق
 
-A new Flutter project.
+تطبيق Cosmetics هو منصة أنيقة لعرض وشراء منتجات التجميل والعناية بالبشرة.
+بيوفر للمستخدم تجربة بسيطة وسهلة من خلال تصميم عصري، تصفّح سريع، وعرض كامل لكل منتج من صور، وصف، سعر، وتقييمات.
+يهدف التطبيق إنه يسهّل رحلة البحث عن أفضل منتجات الجمال ويقدم تجربة تسوّق ممتعة ومريحة.
 
-## Getting Started
+⭐ مميزات التطبيق
 
-This project is a starting point for a Flutter application.
+واجهة مستخدم جذابة وسهلة الاستخدام
 
-A few resources to get you started if this is your first Flutter project:
+عرض المنتجات بتصنيفات مختلفة
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+صفحة تفاصيل لكل منتج (الوصف – السعر – الصور – التقييم)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+إمكانية إضافة المنتجات إلى المفضلة والسلة
+
+بحث سريع عن أي منتج
+
+تجربة سلسة وسريعة بدون تعقيد

@@ -1,15 +1,16 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:cosmentics/core/ui/app_image.dart';
+import 'package:cosmentics/views/auth/login.dart';
 
 import '../../core/logic/helper_methods.dart';
 import 'create_password.dart';
 import '../../core/ui/app_verfiy_code.dart';
-import 'widgets/sucees_dialog.dart';
 import '../../core/ui/app_button.dart';
 import 'package:flutter/material.dart';
 
 class OtpView extends StatelessWidget {
-  const OtpView({super.key});
+  const OtpView({super.key, this.isComeSignUp = false});
+  final bool isComeSignUp;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +85,9 @@ class OtpView extends StatelessWidget {
               const SizedBox(height: 60),
               AppButton(
                 title: 'Done',
-                onPressed: () => goTo(const CreatePasswordView()),
+                onPressed: () => goTo(
+                  isComeSignUp ? const LoginView() : const CreatePasswordView(),
+                ),
               ),
             ],
           ),

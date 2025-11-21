@@ -3,6 +3,7 @@ import 'package:cosmentics/core/ui/app_image.dart';
 import 'package:cosmentics/core/ui/app_input.dart';
 import 'package:cosmentics/core/ui/app_login_or_signup.dart';
 import 'package:cosmentics/views/auth/login.dart';
+import 'package:cosmentics/views/auth/otp.dart';
 import '../../core/ui/app_button.dart';
 import 'package:flutter/material.dart';
 
@@ -71,7 +72,9 @@ class SignUpView extends StatelessWidget {
               AppButton(
                 title: 'Create Account',
                 onPressed: () => goTo(
-                  const LoginView(),
+                  const OtpView(
+                    isComeSignUp: true,
+                  ),
                 ),
               ),
             ],

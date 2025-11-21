@@ -45,7 +45,7 @@ class SucessDialog extends StatelessWidget {
         ),
         AppButton(
           title: 'Go to Home',
-          onPressed: () => goTo(const LoginView()),
+          onPressed: () => goTo(const LoginView(), canPop: false),
         ),
       ],
     );

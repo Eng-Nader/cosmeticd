@@ -18,3 +18,38 @@
 بحث سريع عن أي منتج
 
 تجربة سلسة وسريعة بدون تعقيد
+
+## 📱 Screenshots
+
+### 🏠 Home
+![Home](screenshot/home.png)
+
+### 🔐 Login
+![Login](screenshot/login.png)
+
+### 🔢 OTP
+![OTP](screenshot/otp.png)
+
+### 📝 Sign Up
+![Sign Up](screenshot/sign_up.png)
+
+### 🏠 Categories
+![Categories](screenshot/categories.png)
+
+### 🧾 Create Page
+![Create Page](screenshot/create_page.png)
+
+### 🪟 Dialog
+![Dialog](screenshot/dialog.png)
+
+### 🛍️ Cart
+![Cart](screenshot/cart.png)
+
+### 💳 Checkout
+![Checkout](screenshot/check_out.png)
+
+### 👤 Profile
+![Profile](screenshot/profile.png)
+
+### 🚀 Splash
+![Splash](screenshot/splash.png)

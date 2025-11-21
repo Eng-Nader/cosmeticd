@@ -23,9 +23,11 @@
 
 ### 🏠 Home
 
-![Home](assets/screenshot/home.png) ![Login](assets/screenshot/login.png)
+![Home](assets/screenshot/home.png)
 
 ### 🔐 Login
+
+![Login](assets/screenshot/login.png)
 
 ### 🔢 OTP
 

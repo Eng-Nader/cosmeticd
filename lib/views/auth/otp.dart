@@ -2,7 +2,7 @@ import 'package:cosmentics/core/ui/app_image.dart';
 
 import '../../core/logic/helper_methods.dart';
 import 'create_password.dart';
-import 'widgets/app_pin_fild.dart';
+import '../../core/ui/app_verfiy_code.dart';
 import 'widgets/sucees_dialog.dart';
 import '../../core/ui/app_button.dart';
 import 'package:flutter/material.dart';
@@ -37,26 +37,26 @@ class OtpView extends StatelessWidget {
                 height: 10,
               ),
               Text.rich(
+                style: TextStyle(
+                  color: const Color(0xff434C6D).withValues(alpha: .8),
+                ),
                 textAlign: TextAlign.center,
-                TextSpan(
+                const TextSpan(
                   text: 'We just sent a 4-digit verification code to \n ',
-                  style: TextStyle(
-                    color: const Color(0xff434C6D).withValues(alpha: .8),
-                  ),
+
                   children: [
-                    const TextSpan(
-                      text: '+20 1022658997',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                    WidgetSpan(
+                      child: Text(
+                        textDirection: TextDirection.ltr,
+                        '+20 1022658997',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     TextSpan(
                       text:
                           '. Enter the code in the box  \n  below to continue.',
-
-                      style: TextStyle(
-                        color: const Color(0xff434C6D).withValues(alpha: .8),
-                      ),
                     ),
                   ],
                 ),
@@ -64,9 +64,11 @@ class OtpView extends StatelessWidget {
               const SizedBox(height: 40),
               TextButton(
                 style: TextButton.styleFrom(
+                  visualDensity: VisualDensity.compact,
+
                   alignment: AlignmentDirectional.centerStart,
                 ),
-                onPressed: () {},
+                onPressed: () => Navigator.pop(context),
                 child: const Text(
                   'Edit the number',
                   style: TextStyle(
@@ -77,7 +79,7 @@ class OtpView extends StatelessWidget {
               const SizedBox(height: 20),
               const SizedBox(
                 width: 200,
-                child: AppPinFild(),
+                child: AppVerfiyCode(),
               ),
               const SizedBox(height: 40),
               Text.rich(

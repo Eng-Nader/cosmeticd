@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class HomeGridView extends StatelessWidget {
   const HomeGridView({super.key});
+
   final _list = const [
     _Modle(
       'https://img.joomcdn.net/307c7497a72f45db4cd241c998ca272a6efa670e_original.jpeg',
@@ -48,6 +49,7 @@ class HomeGridView extends StatelessWidget {
     ),
   ];
 
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -56,11 +58,11 @@ class HomeGridView extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 12,
         crossAxisSpacing: 12,
-
+        
         childAspectRatio: 176 / 237,
       ),
       shrinkWrap: true,
-
+        
       itemCount: _list.length,
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {

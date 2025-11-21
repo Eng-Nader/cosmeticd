@@ -1,4 +1,3 @@
-import 'package:cosmentics/core/ui/app_input.dart';
 import 'package:cosmentics/core/ui/app_search.dart';
 
 import '../../../core/ui/app_image.dart';

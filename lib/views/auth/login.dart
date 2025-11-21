@@ -1,11 +1,8 @@
 import 'package:cosmentics/core/ui/app_input.dart';
 import 'package:cosmentics/core/ui/app_login_or_signup.dart';
 import 'package:cosmentics/views/auth/forget_password.dart';
-import 'package:cosmentics/views/auth/sign_up.dart';
-
 import '../../core/logic/helper_methods.dart';
 import '../../core/ui/app_image.dart';
-import 'reset_password.dart';
 import '../../core/ui/app_button.dart';
 import '../home/view.dart';
 import 'package:flutter/material.dart';

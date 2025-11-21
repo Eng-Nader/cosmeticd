@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class AppPinFild extends StatelessWidget {
-  const AppPinFild({super.key});
+class AppVerfiyCode extends StatelessWidget {
+  const AppVerfiyCode({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -8,23 +8,30 @@ class AppVerfiyCode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PinCodeTextField(
+      cursorHeight: 15.5,
+      hintCharacter: '_',
+      autoFocus: true,
+      mainAxisAlignment: MainAxisAlignment.center,
+      separatorBuilder: (context, index) => const SizedBox(
+        width: 12,
+      ),
+      animationDuration: const Duration(milliseconds: 350),
+      animationType: AnimationType.scale,
       keyboardType: TextInputType.number,
       appContext: context,
       length: 4,
-      enableActiveFill: true,
       textStyle: const TextStyle(color: Colors.black),
       pinTheme: PinTheme(
         shape: PinCodeFieldShape.box,
         borderRadius: BorderRadius.circular(8),
         fieldHeight: 45,
         fieldWidth: 45,
-        activeFillColor: Colors.transparent,
-        inactiveFillColor: const Color(0xffE6E9EA),
-        selectedFillColor: Colors.transparent,
-        borderWidth: 0,
-        activeColor: Theme.of(context).primaryColor,
-        inactiveColor: Colors.transparent,
-        selectedColor: Theme.of(context).primaryColor,
+        activeColor: const Color(0xffD75D72),
+        selectedColor: const Color(0xffD75D72),
+        inactiveColor: const Color(0xff898992).withValues(alpha: .36),
+        activeFillColor: const Color(0xffD9D9D9),
+        inactiveFillColor: const Color(0xffD9D9D9),
+        selectedFillColor: const Color(0xffD9D9D9),
       ),
       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
     );

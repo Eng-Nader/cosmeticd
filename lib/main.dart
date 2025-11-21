@@ -1,4 +1,5 @@
 import 'package:cosmentics/views/auth/login.dart';
+import 'package:cosmentics/views/auth/otp.dart';
 import 'package:cosmentics/views/home/view.dart';
 import 'package:cosmentics/views/on_borading.dart';
 import 'package:cosmentics/views/splash.dart';
@@ -72,7 +73,7 @@ class Cosmetics extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        home: const LoginView(),
+        home: const OtpView(),
       ),
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/logic/helper_methods.dart';
 import '../../../core/ui/app_image.dart';
-import '../../../checkout.dart';
+import '../../../checkout/view.dart';
 import '../widgets/cart_view.dart';
 import 'package:flutter/material.dart';
 

@@ -1,5 +1,5 @@
-import 'package:cosmentics/core/logic/helper_methods.dart';
-import 'package:cosmentics/core/ui/app_image.dart';
+import '../../../../core/logic/helper_methods.dart';
+import '../../../../core/ui/app_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 part 'widgets/header.dart';

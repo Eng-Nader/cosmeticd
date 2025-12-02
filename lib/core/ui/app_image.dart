@@ -10,45 +10,61 @@ class AppImage extends StatelessWidget {
     this.width,
     this.color,
     this.fit = BoxFit.scaleDown,
+    this.isCircle = false,
   });
   final String image;
   final double? height, width;
   final Color? color;
   final BoxFit fit;
+  final bool isCircle;
 
   @override
   Widget build(BuildContext context) {
+    final myFit = isCircle ? BoxFit.cover : fit;
+    Widget child;
+    if (image.isEmpty) {
+      return const SizedBox.shrink();
+    }
+
     if (image.toLowerCase().endsWith('svg')) {
-      return SvgPicture.asset(
+      child = SvgPicture.asset(
         'assets/svg/$image',
         color: color,
         height: height,
         width: width,
-        fit: fit,
+        fit: myFit,
       );
     } else if (image.startsWith('http')) {
-      return Image.network(
-        fit: fit,
+      child = Image.network(
+        fit: myFit,
         image,
         color: color,
         height: height,
         width: width,
       );
     } else if (image.endsWith('json')) {
-      return Lottie.asset(
+      child = Lottie.asset(
         'assets/lotties/$image',
         height: height,
         width: width,
-        fit: fit,
+        fit: myFit,
+      );
+    } else {
+      child = Image.asset(
+        'assets/images/$image',
+        fit: myFit,
+
+        color: color,
+        height: height,
+        width: width,
       );
     }
-    return Image.asset(
-      'assets/images/$image',
-      fit: fit,
+    if (isCircle) {
+      return ClipOval(
+        child: child,
+      );
+    }
 
-      color: color,
-      height: height,
-      width: width,
-    );
+    return child;
   }
 }

@@ -1,5 +1,4 @@
-import 'views/splash.dart';
-
+import 'package:cosmentics/views/home/view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'core/logic/helper_methods.dart';
 import 'package:flutter/material.dart';
@@ -38,17 +37,17 @@ class Cosmetics extends StatelessWidget {
           ),
 
           inputDecorationTheme: InputDecorationTheme(
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 16.r,
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 16,
               vertical: 0,
             ),
             suffixIconColor: const Color(0xff8E8EA9),
             labelStyle: const TextStyle(
               color: Color(0xff8E8EA9),
             ),
-            hintStyle: TextStyle(
-              color: const Color(0xff8E8EA9),
-              fontSize: 12.sp,
+            hintStyle: const TextStyle(
+              color: Color(0xff8E8EA9),
+              fontSize: 12
             ),
             floatingLabelStyle: const TextStyle(
               fontSize: 14,
@@ -57,24 +56,23 @@ class Cosmetics extends StatelessWidget {
             border: buildBorder(),
             enabledBorder: buildBorder(),
             focusedBorder: buildBorder(),
-            errorStyle:  TextStyle(height: .1.h, fontSize: 12.sp),
+            errorStyle: const TextStyle(height: .1, fontSize: 12),
           ),
 
           filledButtonTheme: FilledButtonThemeData(
             style: FilledButton.styleFrom(
               backgroundColor: const Color(0xffD75D72),
-              fixedSize:  Size.fromHeight(65.h),
+              fixedSize: const Size.fromHeight(65),
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(60.r),
+                borderRadius: BorderRadius.circular(60),
               ),
             ),
           ),
         ),
         debugShowCheckedModeBanner: false,
-        home: const SplashView(),
-      ),
-    );
+        home: const HomeView (),
+    )) ; 
   }
 }
 
